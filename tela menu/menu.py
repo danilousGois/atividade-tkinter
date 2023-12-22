@@ -1,27 +1,26 @@
-import tkinter as tk
+from tkinter import *
 
-projetos = ["D:\Users\20221041110029\Desktop\tkinter\calculadora tkinter\calculadora.py", "D:\Users\20221041110029\Desktop\tkinter\Tkinter-Designer\build\gui.py", "D:\Users\20221041110029\Desktop\tkinter\formulario\formulario.py"]
+window = Tk()
+window.title("Tela principal")
+window.geometry("1440x900")
 
-def abrir_tela(posicao):
-    open(projetos[posicao])
 
-abrir_tela(1)
+main_frame = Frame(window, width=200, height=200, bg="black")
+main_frame.place(x=0, y=0)
 
-# Criar a janela principal
-janela = tk.Tk()
-janela.title("Menu com 4 Botões")
+frame_title = Label(main_frame, text="Opções")
+frame_title.place(x=0, y=5)
 
-# Criar os botões
-botao1 = tk.Button(janela, text="calculadora")
-botao2 = tk.Button(janela, text="listagem de números")
-botao3 = tk.Button(janela, text="formulário")
-botao4 = tk.Button(janela, text="sair")
+button_1 = Button(main_frame, text="Calculadora")
+button_1.place(x=0, y=30)
 
-# Posicionar os botões na janela
-botao1.pack(pady=10)
-botao2.pack(pady=10)
-botao3.pack(pady=10)
-botao4.pack(pady=10)
+button_2 = Button(main_frame, text="Lista de números")
+button_2.place(x=0, y=60)
 
-# Iniciar o loop principal da aplicação
-janela.mainloop()
+button_3 = Button(main_frame, text="Formulário")
+button_3.place(x=0, y=90)
+
+button_4 = Button(main_frame, text="Sair")
+button_4.place(x=0, y=120)
+
+window.mainloop()
